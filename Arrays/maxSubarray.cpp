@@ -19,13 +19,14 @@ using namespace std;
 
 
 //Optimized Approach T.C => O(n),S.C => O(1)
+//kadane's Algo
 int maxSubarray(const vector<int>& arr) {
-    int maxSum = 0;
+    int maxSum = arr[0];
     int currMax = arr[0];
     int n = arr.size();
     for (int i = 1; i < n;++i){
         currMax = max(currMax + arr[i], arr[i]);
-        maxSum = max(maxSum,currmax)
+        maxSum = max(maxSum, currMax);
     }
     return maxSum;
 }
